@@ -20,7 +20,17 @@ app.post('/scrape', async (req, res) => {
   }
 
   try {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({
+  headless: true,
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu',
+    '--no-zygote',
+    '--single-process'
+  ]
+});
     const page = await browser.newPage();
 
     const zillowURL = `https://www.zillow.com/homes/for_rent/${zip}/?beds=${bedrooms}&baths=${bathrooms}`;
