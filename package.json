@@ -1,16 +1,20 @@
 {
-  "dependencies": {
-    "express": "^5.1.0",
-    "puppeteer": "^24.12.1"
-  },
   "name": "n8n",
   "version": "1.0.0",
-  "main": "zillow_comps_scraper.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer": "^24.12.1"
+  },
+  "render": {
+    "buildCommand": "./render-build.sh"
+  }
 }
